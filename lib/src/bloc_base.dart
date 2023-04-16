@@ -99,6 +99,7 @@ abstract class BlocBase<State>
       _state = state;
       _stateController.add(_state);
       _emitted = true;
+      print("emit");
     } catch (error, stackTrace) {
       onError(error, stackTrace);
       rethrow;
