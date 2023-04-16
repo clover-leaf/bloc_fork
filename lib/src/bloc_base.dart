@@ -95,7 +95,6 @@ abstract class BlocBase<State>
       if (isClosed) {
         throw StateError('Cannot emit new states after calling close');
       }
-      if (_emitted) return;
       onChange(Change<State>(currentState: this.state, nextState: state));
       _state = state;
       _stateController.add(_state);
